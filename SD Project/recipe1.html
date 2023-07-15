@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="recipes.css">
+    <style>
+      
+
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Lora&family=Playfair+Display&display=swap');
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Lora', sans-serif;
+}
+
+button, .first-left img{
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.third-middle, .third-left, .third-right{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;  
+}
+
+.third-main img{
+  width: 40px;
+  height: 40px;
+  margin-bottom: 8px;
+}
+
+button{
+  padding: 10px 20px;
+  border-color: gray  ;
+  border-style: solid;
+  border-width: 0.1px;
+  margin-right: 16px;
+  margin-top: 20px;
+  margin: 20px 16px 20px 0px;
+}
+
+.first-left img{
+  width: 20px;
+}
+
+body, .header {
+  background: #F0F7EE;
+  font-family: "Lora", sans-serif;
+  color: #222222;
+  display: flex;
+  background-color: white;
+  
+}
+
+.header {
+  margin: 0;
+}
+
+h1{
+  font-family: 'Lora', sans-serif;
+  font-size: 4.5vw;
+  line-height: 90%;
+  color: #1C697A;
+}
+
+h2{
+  font-size: 1.2vw;
+  color: black;
+  line-height: 120%;
+}
+
+h5{
+  color: #1C697A;
+}
+
+
+h6{
+  margin: 0;
+}
+
+h7{
+  text-align: center;
+  justify-content: center;
+}
+
+.first-right img{
+  width: 100%;
+}
+
+@supports(object-fit: cover){
+  .first-right img{
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+  }
+}
+
+.header{
+  width: 100%;
+  display: block;
+  background-color: red;
+}
+
+.first-main{
+  display: flex;
+  
+}
+
+.first-left{
+  background-color: white;
+  float: left;
+  width: 60%;
+  height: 100%;
+  padding: 20px 20px 0px 20px;
+}
+
+.first-right{
+  background-color: white;
+  float: right;
+  width: 40%;
+}
+
+iframe{
+  width: 900px;
+  height: 600px;
+}
+
+.third-main{
+  display: flex;
+}
+
+.third-left, .sixth-left{
+  display: flex;
+  width: 33.33%;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.third-middle, .sixth-middle{
+  display: flex;
+  width: 33.33%;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.third-right, .sixth-right{
+  display: flex;
+  width: 33.33%;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.container-fifth{
+  display:flex;
+  margin: 20px 20px 20px 0px;
+
+}
+
+
+
+.fifth-left h4{
+  font-size: 4vh;
+  text-align: left;
+
+}
+
+.fifth-left, .fifth-right{
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+
+.fifth-main{
+  display: flex;
+  flex-direction: row;
+}
+
+.fifth-left{
+  flex-direction: column;
+  float: left;
+  width: 40%;
+  background-color: #1C697A;
+  color: white;
+  margin: 0;
+}
+
+.fifth-right{
+  float: left;
+  width: 60%;
+  background-color: white;
+  padding-left: 50px;
+
+}
+
+.fifth-right h4, .sixth-container h6{
+  font-size: 4vh;
+  text-align: left;
+  color:#1C697A;
+}
+
+.sixth-container h6{
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+.sixth-container img{
+  width: 20%;
+  align-items: center;
+  align-self: center;
+}
+
+.co-container {
+  margin-top: 1.3vh;
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-input {
+  display: none;
+}
+
+.ingredients-container span {
+  margin-left: 10px;
+  padding-top: 20px;
+}
+
+.ingredients-container label{
+  margin-top: 20px;
+}
+
+.ingredients-container {
+  display: flex;
+  align-items: center;
+  margin:0;
+  padding-left: 20px;
+}
+
+.checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  padding: 2px;
+  cursor: pointer;
+}
+
+.checkbox-input:checked + .checkbox {
+  background: #26bfbf;
+  border: 2px solid #26bfbf;
+}
+
+.checkbox-input:checked + .checkbox + span{
+  text-decoration: line-through;
+}
+
+.checkbox-input:checked + .checkbox svg path {
+  stroke: #1C697A;
+  stroke-width: 5px;
+}
+
+.checkbox-input:checked + .checkbox {
+  border: 1px solid black; 
+}
+
+
+.num{
+  padding: 15px;
+  background-color: green;
+  flex: left;
+  display: flex;
+  border: solid 0px yellow;
+  border-radius: 50%;
+  width: 0.2vw;
+  height: 0.2vw;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3vw;
+  margin-right: 10px;
+}
+
+.num-container{
+  display: flex;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 0.7rem;
+
+}
+
+.fifth-right-contents{
+  margin: 1rem 1rem;
+}
+
+.fifth-right-contents h7{
+  text-transform: uppercase;
+  font-weight: bold;
+  color:#1C697A;
+}
+
+.first-column{
+  display:flex;
+  flex-direction: row;
+}
+
+.second-main{
+  background-color: green;
+}
+
+.second-column{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.sixth-container{
+  display: block;
+  background-color: white;
+  max-width: 800px;
+  border: #1C697A solid 2px;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.sixth-container h4{
+  font-size: 3vh;
+  color: black;
+}
+
+.sixth-fourth, .sixth-fifth{
+  text-align: center;
+}
+
+.container-fifth, .first-main, .first-right, .container-fifth, .sixth-container{
+  margin: 50px 70px 10px 70px;
+}
+    </style>
+  </head>
+  <body>
+    <!--
+      h1 - main title
+      h2 - description
+      h3 - star
+      h4 - title (mini)
+      h5 - title (mini) description 
+    -->
+
+    <script src="recipes.js"></script>
+      
+    <div> <!--Main Div-->
+      <div class="header">Header</div>
+      <!-- For Title Page including title of the menu, description, picture of the menu, and links to save, print, rate, and share-->
+      <div class="first-main">
+        
+        <!--For title, description and links-->
+        <div class="first-left">
+          <h1>Afritadang Manok</h1>
+          <p>⭐ ⭐ ⭐ ⭐ ⭐</p>
+
+          <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h2>
+          <button type="Save" span="Save"><img src="icons/save-instagram.png"></button>
+          <button type="Print" span="Print"><img src="icons/printing.png"></button>
+          <button type="Share" span="Share"><img src="icons/share.png"></button>
+
+          <div class="third-main"> <!--third main-->
+            <!-- For Prep Time -->
+            <div class="third-left">
+              <img src="icons/dinner.png">
+              <h5>4 Persons</h5>
+            </div>
+    
+            <div class="third-middle">
+              <img src="icons/time.png">
+              <h5>40 min.</h5>
+            </div>
+    
+            <div class="third-right">
+              <img src="icons/cuba.png">
+              <h5>Budget-Friendly</h5>
+            </div>
+          </div> <!-- end of third main-->
+        </div> <!-- End div for title, description and links-->
+
+        <!--For Picture of the recipe-->
+        <div class="first-right">
+          <img class=pic src="chicken/afritada.jpg">
+          
+        </div> <!-- End div for Picture of the recipe-->
+      </div>  <!-- End of Title Page including title of the menu, description, picture of the menu, and links to save, print, rate, and share-->
+
+     
+      
+      
+
+      <div class="container-fifth">
+        <div class="fifth-left"> <!--fifth main-->
+          <div> <!--title-->
+            <div>
+              <h4>Ingredients</h4>
+            </div>
+          </div> <!-- end of title-->
+
+          <div class="ingredients-container">
+            <input type="checkbox" id="checkbox-1" class="checkbox-input">
+            <label for="checkbox-1" class="checkbox">
+                <svg viewBox="0 0 22 16" fill="none">
+                    <path d="M1 6.85L8.09677 14L21 1" />
+                </svg>
+            </label>
+            <span>Lorem Ipsum </span>
+          </div>
+          
+
+
+          
+          <div class="ingredients-container">
+            <input type="checkbox" id="checkbox-2" class="checkbox-input">
+            <label for="checkbox-2" class="checkbox">
+                <svg viewBox="0 0 22 16" fill="none">
+                    <path d="M1 6.85L8.09677 14L21 1" />
+                </svg>
+            </label>
+            <span>HTML</span>
+          </div>
+
+          <div class="ingredients-container">
+            <input type="checkbox" id="checkbox-3" class="checkbox-input">
+            <label for="checkbox-3" class="checkbox">
+                <svg viewBox="0 0 22 16" fill="none">
+                    <path d="M1 6.85L8.09677 14L21 1" />
+                </svg>
+            </label>
+            <span>HTML</span>
+          </div>
+
+          <div class="ingredients-container">
+            <input type="checkbox" id="checkbox-4" class="checkbox-input">
+            <label for="checkbox-4" class="checkbox">
+                <svg viewBox="0 0 22 16" fill="none">
+                    <path d="M1 6.85L8.09677 14L21 1" />
+                </svg>
+            </label>
+            <span>HTML</span>
+          </div>
+
+          <div class="ingredients-container">
+            <input type="checkbox" id="checkbox-5" class="checkbox-input">
+            <label for="checkbox-5" class="checkbox">
+                <svg viewBox="0 0 22 16" fill="none">
+                    <path d="M1 6.85L8.09677 14L21 1" />
+                </svg>
+            </label>
+            <span>HTML</span>
+          </div>
+
+          <div class="ingredients-container">
+            <input type="checkbox" id="checkbox-6" class="checkbox-input">
+            <label for="checkbox-6" class="checkbox">
+                <svg viewBox="0 0 22 16" fill="none">
+                    <path d="M1 6.85L8.09677 14L21 1" />
+                </svg>
+            </label>
+            <span>HTML</span>
+          </div>
+
+          <div class="ingredients-container">
+            <input type="checkbox" id="checkbox-7" class="checkbox-input">
+            <label for="checkbox-7" class="checkbox">
+                <svg viewBox="0 0 22 16" fill="none">
+                    <path d="M1 6.85L8.09677 14L21 1" />
+                </svg>
+            </label>
+            <span>HTML</span>
+          </div>
+
+          <div class="ingredients-container">
+            <input type="checkbox" id="checkbox-8" class="checkbox-input">
+            <label for="checkbox-8" class="checkbox">
+                <svg viewBox="0 0 22 16" fill="none">
+                    <path d="M1 6.85L8.09677 14L21 1" />
+                </svg>
+            </label>
+            <span>HTML</span>
+          </div>
+
+        </div> <!-- end of fifth left -->
+
+        <div class="fifth-right"> <!-- fifth right -->
+          <div class="fifth-title">
+            <h4>Directions</h4>
+          </div>
+          <div class="fifth-right-contents">
+            <div class="num-container">
+              
+            <h7><strong>STEP 1</strong></h7>
+            </div>
+            <div>
+              <h8>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h8>
+            </div>
+          </div>
+
+          <div class="fifth-right-contents">
+            <div class="num-container">
+              
+            <h7><strong>STEP 1</strong></h7>
+            </div>
+            <div>
+              <h8>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h8>
+            </div>
+          </div>
+
+          <div class="fifth-right-contents">
+            <div class="num-container">
+              
+            <h7><strong>STEP 1</strong></h7>
+            </div>
+            <div>
+              <h8>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h8>
+            </div>
+          </div>
+
+          <div class="fifth-right-contents">
+            <div class="num-container">
+              
+            <h7><strong>STEP 1</strong></h7>
+            </div>
+            <div>
+              <h8>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h8>
+            </div>
+          </div>
+
+          <div class="fifth-right-contents">
+            <div class="num-container">
+              
+            <h7><strong>STEP 1</strong></h7>
+            </div>
+            <div>
+              <h8>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h8>
+            </div>
+          </div>
+
+          <div class="fifth-right-contents">
+            <div class="num-container">
+              
+            <h7><strong>STEP 1</strong></h7>
+            </div>
+            <div>
+              <h8>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h8>
+            </div>
+          </div>
+
+          <div class="fifth-right-contents">
+            <div class="num-container">
+              
+            <h7><strong>STEP 1</strong></h7>
+            </div>
+            <div>
+              <h8>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h8>
+            </div>
+          </div>
+
+          <div class="fifth-right-contents">
+            <div class="num-container">
+              
+            <h7><strong>STEP 1</strong></h7>
+            </div>
+            <div>
+              <h8>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h8>
+            </div>
+          </div>
+
+          <div class="fifth-right-contents">
+            <div class="num-container">
+              
+            <h7><strong>STEP 1</strong></h7>
+            </div>
+            <div>
+              <h8>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h8>
+            </div>
+          </div>
+
+          <div class="fifth-right-contents">
+            <div class="num-container">
+              
+            <h7><strong>STEP 1</strong></h7>
+            </div>
+            <div>
+              <h8>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h8>
+            </div>
+          </div>
+        </div>
+          
+
+      </div> <!-- end of fifth main -->
+
+      <div class="sixth-container"> <!-- Sixth -->
+        <h6>Nutritional Facts</h6>
+        <div class="first-column">
+          <div class="sixth-left">
+            <img src="icons/calories.png">
+            <h4>123</h4>
+            <h5>Calories</h5>
+          </div>
+  
+          <div class="sixth-middle">
+            <img src="icons/trans-fat.png">
+            <h4>123</h4>
+            <h5>Trans-fat</h5>
+          </div>
+  
+          <div class="sixth-right">
+            <img src="icons/whey.png">
+            <h4>123</h4>
+            <h5>Protein</h5>
+          </div>
+        </div>
+
+        <div class="second-column">
+          <div class="sixth-fourth">
+            <img src="icons/wheat.png">
+            <h4>123</h4>
+            <h5>Carbohydrates</h5>
+          </div>
+          
+          <div class="sixth-fifth">
+            <img src="icons/salt.png">
+            <h4>123</h4>
+            <h5>Sodium</h5>
+          </div>
+        </div>
+      </div>
+
+      
+    </div> <!-- End div of Main Div-->
+  </body>
+</html>
